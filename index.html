@@ -1,77 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Atlas Defense Co - Building something special." />
-    <meta name="keywords" content="Atlas Defense Co, firearms, tactical, gear" />
+    <title>Atlas Defense Co | Coming Soon</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Atlas Defense Co is building something special. Premium tactical gear and innovation coming soon." />
+    <meta name="keywords" content="Atlas Defense Co, tactical gear, firearms accessories, M-LOK, barricade stop, Atlas Defense, shooting, gun parts" />
     <meta name="author" content="Atlas Defense Co" />
-    <title>Atlas Defense Co - Coming Soon</title>
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph for social media previews -->
+    <meta property="og:title" content="Atlas Defense Co" />
+    <meta property="og:description" content="Premium tactical gear and innovation coming soon." />
+    <meta property="og:url" content="https://www.atlasdefense.co" />
+    <meta property="og:type" content="website" />
+
+    <!-- Favicon (optional) -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
     <style>
-        body {
-            background-color: #f0f0f0;
-            font-family: Arial, sans-serif;
-            color: #333;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-        }
+      body {
+        background-color: #6b8e23; /* Olive drab green */
+        font-family: Arial, sans-serif;
+        color: #333;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+      }
 
-        #logo {
-            margin-top: 40px;
-            max-width: 300px;
-            width: 100%;
-        }
+      #logo {
+        margin-top: 40px;
+        max-width: 300px;
+        width: 100%;
+      }
 
-        h1 {
-            font-size: 48px;
-            font-weight: bold;
-            margin-top: 30px;
-        }
+      h1 {
+        font-size: 48px;
+        font-weight: bold;
+        margin-top: 30px;
+        color: white;
+      }
 
-        p {
-            font-size: 20px;
-            margin-bottom: 40px;
-        }
+      p {
+        font-size: 20px;
+        margin-bottom: 40px;
+        color: white;
+      }
 
-        .contact-links {
-            font-size: 20px;
-            font-weight: bold;
-            text-align: center;
-            margin-bottom: 50px;
-        }
+      .contact-links {
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 50px;
+      }
 
-        .contact-links a {
-            color: #333;
-            text-decoration: none;
-            margin: 0 10px;
-        }
+      .contact-links a {
+        color: white;
+        text-decoration: none;
+        margin: 0 10px;
+      }
 
-        .contact-links a:hover {
-            text-decoration: underline;
-        }
+      .contact-links a:hover {
+        text-decoration: underline;
+      }
 
-        .divider {
-            margin: 0 10px;
-            color: #999;
-        }
+      .divider {
+        margin: 0 10px;
+        color: #999;
+      }
+
+      /* Style for sign-up form */
+      .signup-form {
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 8px;
+        padding: 20px;
+        display: inline-block;
+        margin-bottom: 40px;
+      }
+
+      .signup-form input[type="email"] {
+        padding: 10px;
+        font-size: 16px;
+        width: 250px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      .signup-form button {
+        background-color: #333;
+        color: white;
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .signup-form button:hover {
+        background-color: #555;
+      }
     </style>
-</head>
-<body>
-
-    <!-- Logo -->
-    <img src="atlas-logo.png" alt="Atlas Defense Co Logo" id="logo" />
-
-    <!-- Coming Soon Message -->
+  </head>
+  <body>
+    <img id="logo" src="atlas-logo.png" alt="Atlas Defense Co Logo" />
     <h1>Coming Soon</h1>
-    <p>Precision. Protection. Purpose.</p>
+    <p>Atlas Defense Co is building something special. Stay tuned for premium tactical gear.</p>
 
-    <!-- Instagram and Email -->
     <div class="contact-links">
-        <a href="https://www.instagram.com/atlasdefenseco" target="_blank">Instagram</a>
-        <span class="divider">|</span>
-        <a href="mailto:info@atlasdefense.co">Email</a>
+      <a href="https://www.instagram.com/atlasdefenseco" target="_blank">Instagram</a>
+      <span class="divider">|</span>
+      <a href="mailto:info@atlasdefense.co">Email</a>
     </div>
 
-</body>
+    <!-- Sign-up form to be notified -->
+    <div class="signup-form">
+      <h2 style="color: #333;">Sign up to be notified when we launch!</h2>
+      <form action="https://example.com/signup" method="POST">
+        <input type="email" name="email" placeholder="Enter your email" required />
+        <br />
+        <button type="submit">Sign Up</button>
+      </form>
+    </div>
+  </body>
 </html>

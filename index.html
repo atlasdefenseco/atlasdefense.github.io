@@ -28,12 +28,37 @@
         text-align: center;
         margin: 0;
         padding: 0;
+        animation: fadeIn 2s ease-in; /* Added fade-in effect */
+      }
+
+      /* Fade-in animation */
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
       }
 
       #logo {
         margin-top: 40px;
         max-width: 300px;
         width: 100%;
+        animation: bounce 1.5s ease-in-out; /* Added bounce animation for logo */
+      }
+
+      /* Bounce effect for the logo */
+      @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+          transform: translateY(0);
+        }
+        40% {
+          transform: translateY(-10px);
+        }
+        60% {
+          transform: translateY(-5px);
+        }
       }
 
       h1 {
@@ -41,6 +66,7 @@
         font-weight: bold;
         margin-top: 30px;
         color: white;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Added text shadow for h1 */
       }
 
       p {
@@ -60,10 +86,11 @@
         color: white;
         text-decoration: none;
         margin: 0 10px;
+        transition: color 0.3s ease;
       }
 
       .contact-links a:hover {
-        text-decoration: underline;
+        color: #4CAF50; /* Change link color on hover */
       }
 
       .divider {
@@ -75,6 +102,25 @@
         width: 100%;
         height: 600px;
         border: none;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added box shadow to the Google Form */
+        border-radius: 10px;
+        margin-top: 30px;
+        animation: fadeIn 3s ease-in-out; /* Added fade-in effect for iframe */
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 36px;
+        }
+
+        .contact-links a {
+          font-size: 16px;
+        }
+
+        iframe {
+          height: 500px;
+        }
       }
     </style>
   </head>

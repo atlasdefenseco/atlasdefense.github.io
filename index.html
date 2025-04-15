@@ -1,187 +1,236 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Atlas Defense Co | Coming Soon</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Atlas Defense Co | Coming Soon</title>
 
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Atlas Defense Co is building something special. Premium tactical gear and innovation coming soon." />
-    <meta name="keywords" content="Atlas Defense Co, tactical gear, firearms accessories, M-LOK, barricade stop, Atlas Defense, shooting, gun parts" />
-    <meta name="author" content="Atlas Defense Co" />
-    <meta name="robots" content="index, follow" />
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Atlas Defense Co is building something special. Premium tactical gear and innovation coming soon." />
+  <meta name="keywords" content="Atlas Defense Co, tactical gear, firearms accessories, M-LOK, barricade stop, Atlas Defense, shooting, gun parts" />
+  <meta name="author" content="Atlas Defense Co" />
+  <meta name="robots" content="index, follow" />
 
-    <!-- Open Graph for social media previews -->
-    <meta property="og:title" content="Atlas Defense Co" />
-    <meta property="og:description" content="Premium tactical gear and innovation coming soon." />
-    <meta property="og:url" content="https://www.atlasdefense.co" />
-    <meta property="og:type" content="website" />
+  <!-- Open Graph for social media previews -->
+  <meta property="og:title" content="Atlas Defense Co" />
+  <meta property="og:description" content="Premium tactical gear and innovation coming soon." />
+  <meta property="og:url" content="https://www.atlasdefense.co" />
+  <meta property="og:type" content="website" />
 
-    <!-- Favicon -->
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
 
-    <style>
-      body {
-        background-color: #C4CBBA;
-        font-family: Arial, sans-serif;
-        color: #000;
-        text-align: center;
-        margin: 0;
-        padding: 0;
-        animation: fadeIn 2s ease-in;
-      }
+  <style>
+    body {
+      background-color: #C4CBBA;
+      font-family: Arial, sans-serif;
+      color: #000;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      animation: fadeIn 2s ease-in;
+    }
 
-      @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
-      }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
 
-      #logo {
-        margin-top: 40px;
-        max-width: 300px;
-        width: 100%;
-        animation: bounce 1.5s ease-in-out;
-      }
+    #logo {
+      margin-top: 40px;
+      max-width: 300px;
+      width: 100%;
+      animation: bounce 1.5s ease-in-out;
+    }
 
-      @keyframes bounce {
-        0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-        40% { transform: translateY(-10px); }
-        60% { transform: translateY(-5px); }
-      }
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(-10px); }
+      60% { transform: translateY(-5px); }
+    }
 
-      #logo:hover {
-        transform: scale(1.05);
-        transition: transform 0.3s ease-in-out;
-      }
+    #logo:hover {
+      transform: scale(1.05);
+      transition: transform 0.3s ease-in-out;
+    }
 
-      h1 {
-        font-size: 48px;
-        font-weight: bold;
-        margin-top: 30px;
-        color: #000;
-        text-shadow: 1px 1px 3px rgba(255,255,255,0.3);
-      }
+    h1 {
+      font-size: 48px;
+      font-weight: bold;
+      margin-top: 30px;
+      color: #000;
+      text-shadow: 1px 1px 3px rgba(255,255,255,0.3);
+    }
 
-      p {
-        font-size: 20px;
-        margin-bottom: 40px;
-        color: #000;
-      }
+    p {
+      font-size: 20px;
+      margin-bottom: 40px;
+      color: #000;
+    }
 
-      .blurb {
-        font-size: 18px;
-        max-width: 600px;
-        margin: -20px auto 40px auto;
-        line-height: 1.5;
-        color: #000;
-      }
+    .blurb {
+      font-size: 18px;
+      max-width: 600px;
+      margin: -20px auto 40px auto;
+      line-height: 1.5;
+      color: #000;
+    }
 
-      .contact-links {
-        font-size: 20px;
-        font-weight: bold;
-        text-align: center;
-        margin-bottom: 50px;
-      }
+    .contact-links {
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 50px;
+    }
 
-      .contact-links a {
-        display: inline-block;
-        color: #000;
-        text-decoration: none;
-        margin: 0 10px;
-        transition: color 0.3s ease;
-      }
+    .contact-links a {
+      display: inline-block;
+      color: #000;
+      text-decoration: none;
+      margin: 0 10px;
+      transition: color 0.3s ease;
+    }
 
-      .contact-links a:hover {
-        color: #4CAF50;
-      }
+    .contact-links a:hover {
+      color: #4CAF50;
+    }
 
-      .divider {
-        margin: 0 10px;
-        color: #000;
-      }
+    .divider {
+      margin: 0 10px;
+      color: #000;
+    }
 
-      .notify-container {
-        margin-top: 20px;
-      }
+    .notify-container {
+      margin-top: 20px;
+    }
 
-      .notify-button {
-        background-color: #4B5320;
-        color: #000000;
-        font-size: 18px;
-        padding: 15px 30px;
-        border: none;
-        cursor: pointer;
-        border-radius: 5px;
-        transition: background-color 0.3s;
-        display: inline-block;
-        margin-bottom: 20px;
-      }
+    .notify-button {
+      background-color: #4B5320;
+      color: #000000;
+      font-size: 18px;
+      padding: 15px 30px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
 
-      .notify-button:hover {
-        background-color: #3e4a1a;
-      }
+    .notify-button:hover {
+      background-color: #3e4a1a;
+    }
 
-      .privacy-policy {
-        font-size: 6px;
-        max-width: 600px;
-        margin: 50px auto 30px auto;
-        color: #333;
-        text-align: center;
-        line-height: 1.4;
-        opacity: 0.7;
-      }
+    /* Privacy Policy Link Styles */
+    .privacy-link {
+      font-size: 10px;
+      color: #333;
+      opacity: 0.6;
+      cursor: pointer;
+      text-decoration: underline;
+    }
 
-      .privacy-policy a {
-        color: #333;
-        text-decoration: underline;
-      }
+    .privacy-link:hover {
+      color: #4CAF50;
+    }
 
-      .privacy-policy a:hover {
-        color: #4CAF50;
-      }
+    /* Modal Styles */
+    .privacy-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
 
-      @media (max-width: 768px) {
-        h1 {
-          font-size: 36px;
-        }
+    .privacy-modal-content {
+      background-color: #fff;
+      padding: 20px;
+      max-width: 600px;
+      margin: 0 auto;
+      overflow-y: auto;
+      max-height: 80vh;
+    }
 
-        .contact-links a {
-          font-size: 16px;
-        }
+    .privacy-modal-close {
+      color: #000;
+      font-size: 18px;
+      font-weight: bold;
+      background: none;
+      border: none;
+      cursor: pointer;
+      text-align: right;
+      width: 100%;
+    }
 
-        .blurb {
-          font-size: 16px;
-          padding: 0 15px;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <img id="logo" src="atlas-logo.png" alt="Atlas Defense Co Logo" />
-    <h1>Coming Soon</h1>
-    <p>Precision. Protection. Purpose.</p>
-    <p class="blurb">
-      Engineered for performance under pressure, Atlas Defense Co. delivers precision-machined accessories that enhance weapon control, stability, and mission effectiveness.
-    </p>
+    .privacy-modal-close:hover {
+      color: #4CAF50;
+    }
+  </style>
+</head>
+<body>
+  <img id="logo" src="atlas-logo.png" alt="Atlas Defense Co Logo" />
+  <h1>Coming Soon</h1>
+  <p>Precision. Protection. Purpose.</p>
+  <p class="blurb">
+    Engineered for performance under pressure, Atlas Defense Co. delivers precision-machined accessories that enhance weapon control, stability, and mission effectiveness.
+  </p>
 
-    <div class="contact-links">
-      <a href="https://www.instagram.com/atlasdefenseco" target="_blank">Instagram</a>
-      <span class="divider">|</span>
-      <a href="mailto:info@atlasdefense.co">Email</a>
-    </div>
+  <div class="contact-links">
+    <a href="https://www.instagram.com/atlasdefenseco" target="_blank">Instagram</a>
+    <span class="divider">|</span>
+    <a href="mailto:info@atlasdefense.co">Email</a>
+  </div>
 
-    <div class="notify-container">
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSexyWorbxegS1YH_QERivbbSLw6JX_SpFQo5xWEAZrktnV8nQ/viewform" target="_blank">
-        <button class="notify-button">Notify Me</button>
-      </a>
-    </div>
+  <div class="notify-container">
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSexyWorbxegS1YH_QERivbbSLw6JX_SpFQo5xWEAZrktnV8nQ/viewform" target="_blank">
+      <button class="notify-button">Notify Me</button>
+    </a>
+  </div>
 
-    <div class="privacy-policy">
-      <p><strong>Privacy Policy</strong></p>
-      <p>Atlas Defense Co respects your privacy. We collect limited personal information, such as email addresses, solely for communication purposes including product updates and promotions. We do not sell or share your personal data with third parties.</p>
-      <p>By interacting with our site or submitting your email, you consent to the collection and use of your information as described. This site may use basic cookies or analytics to improve performance and user experience.</p>
-      <p>You may opt out of communications at any time by contacting us at <a href="mailto:info@atlasdefense.co">info@atlasdefense.co</a>.</p>
-      <p>Last updated: April 2025</p>
-    </div>
-  </body>
-</html>
+  <!-- Privacy Policy Link -->
+  <div>
+    <span class="privacy-link" onclick="openModal()">Privacy Policy</span>
+  </div>
+
+  <!-- Modal for Privacy Policy -->
+  <div id="privacyModal" class="privacy-modal">
+    <div class="privacy-modal-content">
+      <button class="privacy-modal-close" onclick="closeModal()">X</button>
+      <h2>Privacy Policy</h2>
+      <p>At Atlas Defense Co, we respect your privacy and are committed to protecting your personal information. This privacy policy outlines how we collect, use, and protect your personal data when you interact with our website and services.</p>
+
+      <h3>1. Information We Collect</h3>
+      <p>We collect personal information, such as your name, email address, and any other details you choose to provide when you sign up for updates, contact us, or use our services. We may also collect anonymous data about your usage of our website through cookies and analytics tools.</p>
+
+      <h3>2. How We Use Your Information</h3>
+      <p>The information we collect is used to:
+        <ul>
+          <li>Communicate with you about updates, new products, and promotions.</li>
+          <li>Provide customer support and respond to inquiries.</li>
+          <li>Analyze website usage to improve our products and services.</li>
+        </ul>
+      </p>
+
+      <h3>3. Data Protection</h3>
+      <p>We take the security of your personal data seriously and employ industry-standard security measures to protect it. However, no method of transmission over the internet is 100% secure, and we cannot guarantee absolute security.</p>
+
+      <h3>4. Sharing of Data</h3>
+      <p>We do not sell, rent, or trade your personal information to third parties. We may share your information with trusted partners or service providers who assist us in operating our business and serving you, but they are required to keep your information confidential.</p>
+
+      <h3>5. Your Rights</h3>
+      <p>You have the right to access, correct, or delete your personal data. If you wish to opt out of communications, you can unsubscribe from our email list at any time by clicking the unsubscribe link in the emails we send you, or by contacting us directly.</p>
+
+      <h3>6. Cookies</h3>
+      <p>Our website may use cookies to enhance your browsing experience. Cookies are small text files stored on your device that allow us to track website usage and remember preferences. You can control cookie settings through your browser.</p>
+
+      <h3>7. Changes to This Privacy Policy</h3>
+      <p>We reserve the right to update this privacy policy at any time. Any changes will be posted on this page, and the date of the latest revision will be indicated at the bottom of the policy.</p>
+
+      <h3>8. Contact Us</h3>
+      <p>If you have any questions about this privacy policy or how we handle your personal data, please contact us at <a href="

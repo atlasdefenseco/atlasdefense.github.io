@@ -1,1 +1,2 @@
 # atlasdefense.github.io
+All rights reserved. This software is not for use, modification, or distribution by any individual or organization without written consent from the author. Unauthorized use is prohibited.

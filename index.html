@@ -20,6 +20,7 @@
       --muted:#99a2ab;
       --acc-0:#5a5f66;
       --acc-1:#7c848c;
+      --hover-glow:#3a5f46; /* tactical green glow */
       --border:#2a2f36;
       --shadow:0 16px 36px rgba(0,0,0,.45);
       --radius:14px;
@@ -41,20 +42,43 @@
     .tagline{ margin:18px auto 8px; font-weight:900; text-transform:uppercase; font-size:clamp(22px,3.2vw,34px);}
     .sub{ color:var(--text-1); max-width:760px; margin:10px auto 22px; font-size:18px; }
 
-    /* Button */
+    /* CTA Button */
     .cta{ display:inline-flex; background: linear-gradient(180deg, var(--acc-0), #4d535a);
       color:#f6f7f8; font-weight:800; text-transform:uppercase;
       padding:14px 28px; border-radius:var(--radius); text-decoration:none;
       border:1px solid #3d4248; transition: background .2s ease; }
     .cta:hover{ background: linear-gradient(180deg, var(--acc-1), #6c747b); }
 
+    /* Mini buttons under CTA */
+    .mini-links{
+      margin-top:16px; display:flex; justify-content:center; gap:12px;
+      flex-wrap:wrap;
+    }
+    .mini-links a{
+      display:inline-block;
+      padding:8px 16px;
+      background:var(--bg-2);
+      border:1px solid var(--border);
+      border-radius:999px;
+      color:var(--text-1);
+      font-size:13px;
+      font-weight:600;
+      text-decoration:none;
+      transition: background .2s ease, color .2s ease, border-color .2s ease, box-shadow .2s ease;
+    }
+    .mini-links a:hover{
+      background:var(--acc-0);
+      color:#fff;
+      border-color:var(--acc-1);
+      box-shadow:0 0 8px var(--hover-glow);
+    }
+
     /* Products */
     .section{ margin:34px 0; }
     .cards{ display:flex; justify-content:center; gap:18px; flex-wrap:wrap;}
     .card{ background:var(--bg-1); border:1px solid var(--border); border-radius:var(--radius);
       box-shadow:var(--shadow); overflow:hidden; display:flex; flex-direction:column; max-width:480px; flex:1 1 360px;}
-    .card .ph{ background:linear-gradient(180deg, #161a1e, #111416); height:160px; display:flex;
-      align-items:center; justify-content:center; color:#85909a; font-weight:700; font-size:14px;}
+    .card img{ width:100%; height:auto; display:block; background:#111; }
     .card .content{ padding:14px 14px 16px;}
     .card h3{ margin:4px 0 6px; font-size:18px;}
     .card p{ margin:0; color:var(--text-1); font-size:14.5px;}
@@ -78,6 +102,11 @@
       Mission-first tools engineered for performance under pressure. Designed, tested, and built in Pennsylvania.
     </p>
     <a class="cta" href="https://atlasdefenseco.etsy.com" target="_blank" rel="noopener">Shop Atlas on Etsy</a>
+
+    <div class="mini-links">
+      <a href="https://www.instagram.com/atlasdefenseco" target="_blank" rel="noopener">📷 Instagram</a>
+      <a href="mailto:info@atlasdefense.co">✉️ Contact</a>
+    </div>
   </header>
 
   <!-- Products -->
@@ -87,7 +116,7 @@
 
       <!-- VLOK -->
       <article class="card">
-        <div class="ph">The VLOK Tool</div>
+        <img src="VLOK%20PNG.png" alt="The VLOK Tool product image" />
         <div class="content">
           <h3>The VLOK Tool</h3>
           <p>
@@ -105,7 +134,7 @@
 
       <!-- Trident -->
       <article class="card">
-        <div class="ph">Trident — Optic Tool</div>
+        <img src="Trident%20PNG.png" alt="Trident Optic Adjustment Tool product image" />
         <div class="content">
           <h3>Trident Optic Adjustment Tool</h3>
           <p>

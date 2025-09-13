@@ -1,235 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Atlas Defense Co | Precision. Protection. Purpose.</title>
 
-  <!-- Canonical & Theme -->
-  <link rel="canonical" href="https://www.atlasdefense.co/">
-  <meta name="theme-color" content="#0f1113" />
-
-  <!-- SEO -->
-  <meta name="description" content="Atlas Defense Co designs precision tools and accessories engineered for performance under pressure. Shop select products on Etsy." />
-  <meta name="keywords" content="Atlas Defense Co, tactical gear, optics tool, VLOK, M-LOK, barricade stop, breacher, launcher accessories, gun parts" />
-  <meta name="author" content="Atlas Defense Co" />
+  <meta name="description" content="Atlas Defense Co designs mission-first tools and accessories engineered for performance under pressure. VLOK barricade stop, Trident optic tool, and more." />
   <meta name="robots" content="index,follow" />
 
-  <!-- Open Graph / Twitter -->
-  <meta property="og:title" content="Atlas Defense Co" />
-  <meta property="og:description" content="Precision tools and accessories engineered for performance under pressure." />
-  <meta property="og:url" content="https://www.atlasdefense.co" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="atlas-og.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Atlas Defense Co" />
-  <meta name="twitter:description" content="Precision tools and accessories engineered for performance under pressure." />
-  <meta name="twitter:image" content="atlas-og.jpg" />
-
-  <!-- Favicon -->
   <link rel="icon" href="favicon.ico" sizes="any" />
-  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 
   <style>
     :root{
-      --bg-0:#0f1113;      /* page background */
-      --bg-1:#14171a;      /* panels/cards/nav */
-      --bg-2:#1a1e22;      /* inputs/modal body */
-      --text-0:#e8eaed;    /* primary text */
-      --text-1:#b6bcc3;    /* secondary text */
-      --acc-0:#5a5f66;     /* tactical gray accent */
-      --acc-1:#7c848c;     /* hover gray */
-      --link:#9fb7c5;      /* link color */
-      --border:#2a2f36;    /* subtle borders */
-      --shadow:0 14px 32px rgba(0,0,0,.40);
+      --bg-0:#0f1113;
+      --bg-1:#14171a;
+      --bg-2:#1a1e22;
+      --text-0:#e8eaed;
+      --text-1:#b6bcc3;
+      --muted:#99a2ab;
+      --acc-0:#5a5f66;
+      --acc-1:#7c848c;
+      --link:#9fb7c5;
+      --border:#2a2f36;
+      --shadow:0 16px 36px rgba(0,0,0,.45);
       --radius:14px;
+      --radius-sm:12px;
+      --grid-gap:18px;
     }
 
-    html,body{
+    html, body{
       margin:0;
       background: var(--bg-0) url('https://www.transparenttextures.com/patterns/carbon-fibre-v2.png') repeat;
       color:var(--text-0);
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial, "Noto Sans";
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Inter, Roboto, "Helvetica Neue", Arial;
       line-height:1.6;
     }
 
-    .wrap{ max-width: 980px; margin:0 auto; padding:56px 20px 28px; text-align:center; }
+    .container{ max-width:1120px; margin:0 auto; padding:28px 20px; }
 
-    /* Hero */
-    .tagline{
-      color: var(--text-0);
-      font-weight:800;
-      letter-spacing:.3px;
-      font-size: clamp(22px, 3.2vw, 32px);
-      margin: 6px 0 18px;
-      text-transform: uppercase;
-    }
+    .hero{text-align:center; padding:48px 0 28px;}
+    .hero img#logo{ width:min(360px, 60vw); filter: drop-shadow(0 12px 28px rgba(0,0,0,.55)); }
+    .tagline{ margin:18px auto 8px; font-weight:900; text-transform:uppercase; font-size:clamp(22px,3.2vw,34px);}
+    .sub{ color:var(--text-1); max-width:760px; margin:10px auto 22px; font-size:18px; }
 
-    #logo{
-      max-width: 320px;
-      width: 100%;
-      filter: drop-shadow(0 10px 24px rgba(0,0,0,.55));
-      transition: transform .18s ease;
-    }
-    #logo:hover{ transform: scale(1.02); }
+    .cta{ display:inline-flex; background: linear-gradient(180deg, var(--acc-0), #4d535a);
+      color:#f6f7f8; font-weight:800; text-transform:uppercase;
+      padding:14px 28px; border-radius:var(--radius); text-decoration:none;
+      border:1px solid #3d4248; transition: background .2s ease; }
+    .cta:hover{ background: linear-gradient(180deg, var(--acc-1), #6c747b); }
 
-    .blurb{
-      font-size: 18px;
-      max-width: 720px;
-      margin: 20px auto 30px;
-      color: var(--text-1);
-    }
+    .section{ margin:34px 0; }
+    .cards{ display:grid; grid-template-columns:repeat(2,1fr); gap:var(--grid-gap);}
+    .card{ background:var(--bg-1); border:1px solid var(--border); border-radius:var(--radius);
+      box-shadow:var(--shadow); overflow:hidden; display:flex; flex-direction:column;}
+    .card .ph{ background:linear-gradient(180deg, #161a1e, #111416); height:160px; display:flex;
+      align-items:center; justify-content:center; color:#85909a; font-weight:700; font-size:14px;}
+    .card .content{ padding:14px 14px 16px;}
+    .card h3{ margin:4px 0 6px; font-size:18px;}
+    .card p{ margin:0; color:var(--text-1); font-size:14.5px;}
+    .pill{ display:inline-block; margin-top:10px; font-size:12px; color:#e7ecf0;
+      background:#2a3137; border-radius:999px; padding:6px 10px;}
 
-    /* CTA button */
-    .notify-button{
-      appearance:none;
-      background: linear-gradient(180deg, var(--acc-0), #4d535a);
-      color: #f5f6f7;
-      font-weight:800;
-      font-size: 18px;
-      padding: 14px 28px;
-      border:1px solid #3d4248;
-      border-radius: var(--radius);
-      cursor:pointer;
-      box-shadow: 0 12px 26px rgba(0,0,0,.28);
-      transition: transform .08s ease, box-shadow .18s ease, background .18s ease;
-      text-transform: uppercase;
-      letter-spacing:.6px;
-    }
-    .notify-button:hover{ background: linear-gradient(180deg, var(--acc-1), #6c747b); }
-    .notify-button:active{ transform: translateY(1px); box-shadow: 0 8px 18px rgba(0,0,0,.22); }
-
-    /* Social / contact */
-    .contact-links{ font-weight:600; margin: 32px 0 50px; }
-    .contact-links a{
-      color: var(--link);
-      text-decoration:none;
-      border-bottom:1px solid transparent;
-      margin: 0 12px;
-      transition: color .15s ease, border-color .15s ease;
-    }
-    .contact-links a:hover{ color:#c8dde8; border-color:#c8dde8; }
-    .divider{ color: var(--text-1); opacity:.45; }
-
-    /* Footer bar */
-    footer{
-      margin-top: 36px;
-      background: var(--bg-1);
-      border-top: 1px solid var(--border);
-      box-shadow: var(--shadow);
-    }
-    .footer-inner{
-      max-width: 980px; margin: 0 auto;
-      padding: 18px 20px;
-      display:flex; flex-wrap:wrap;
-      gap:10px; align-items:center; justify-content:space-between;
-      color: var(--text-1);
-      font-size: 13px;
-    }
-    .footer-links{
-      display:flex; gap:16px; align-items:center; flex-wrap:wrap;
-    }
-    .footer-links a{
-      color: var(--text-1); text-decoration:none; border-bottom:1px solid transparent;
-      transition: color .15s ease, border-color .15s ease;
-    }
-    .footer-links a:hover{ color: #c8dde8; border-color:#c8dde8; }
-
-    /* Privacy modal */
-    .privacy-modal{
-      display:none;
-      position: fixed; inset: 0;
-      background: rgba(0,0,0,.72);
-      z-index: 1000;
-      align-items: center; justify-content: center;
-      padding: 20px;
-    }
-    .privacy-modal-content{
-      background: var(--bg-2);
-      border:1px solid var(--border);
-      color: var(--text-0);
-      padding: 18px 20px 24px;
-      width: 100%;
-      max-width: 760px;
-      max-height: 82vh;
-      overflow:auto;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      text-align:left;
-    }
-    .privacy-modal h2{ margin: 6px 0 8px; }
-    .privacy-modal h3{ margin: 18px 0 6px; color: var(--text-0); }
-    .privacy-modal p, .privacy-modal li{ color: var(--text-1); }
-
-    .privacy-modal-close{
-      color: var(--text-0);
-      font-size: 14px;
-      font-weight: 700;
-      background: transparent;
-      border:1px solid var(--border);
-      border-radius: 10px;
-      padding: 6px 10px;
-      cursor: pointer;
-      float: right;
-      transition: border-color .15s ease, color .15s ease, background .15s ease;
-    }
-    .privacy-modal-close:hover{
-      color: #0b0d0e; background: var(--acc-1); border-color:#6b757e;
-    }
+    footer{ margin-top: 36px; background: var(--bg-1); border-top: 1px solid var(--border); box-shadow: var(--shadow);}
+    .footer-inner{ max-width: 1120px; margin: 0 auto; padding: 18px 20px;
+      display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:space-between;
+      color: var(--text-1); font-size: 13px; text-align:center;}
+    .footer-codes{ font-size:13px; color:var(--muted); margin-top:6px;}
   </style>
 </head>
 <body>
-  <main class="wrap">
+
+  <header class="hero container">
+    <img id="logo" src="ADC%20Logo%20Github.png" alt="Atlas Defense Co Logo" />
     <h1 class="tagline">Precision. Protection. Purpose.</h1>
-
-    <img id="logo" src="ADC%20Logo%20Github.png" alt="Atlas Defense Co Logo" width="320" height="320" />
-
-    <p class="blurb">
-      Engineered for performance under pressure, Atlas Defense Co. delivers precision accessories that enhance weapon control, stability, and mission effectiveness.
+    <p class="sub">
+      Mission-first tools engineered for performance under pressure. Designed, tested, and built in Pennsylvania.
     </p>
+    <a class="cta" href="https://atlasdefenseco.etsy.com" target="_blank" rel="noopener">Shop Atlas on Etsy</a>
+  </header>
 
-    <div class="notify-container" style="margin-top:22px;">
-      <a href="https://atlasdefenseco.etsy.com" target="_blank" rel="noopener">
-        <button class="notify-button">Shop Atlas on Etsy</button>
-      </a>
-    </div>
+  <section class="container section" id="products">
+    <h2>Featured Gear</h2>
+    <div class="cards">
+      <article class="card">
+        <div class="ph">VLOK — Barricade Stop</div>
+        <div class="content">
+          <h3>VLOK Barricade Stop (Metal)</h3>
+          <p>Low-profile, single-slot barricade stop designed for positive indexing and control on cover, barricades, and non-ideal surfaces.</p>
+          <span class="pill">M-LOK | 6061-T6</span>
+        </div>
+      </article>
 
-    <div class="contact-links">
-      <a href="https://www.instagram.com/atlasdefenseco" target="_blank" rel="noopener">Instagram</a>
-      <span class="divider">|</span>
-      <a href="mailto:info@atlasdefense.co">Email</a>
+      <article class="card">
+        <div class="ph">Trident — Optic Tool</div>
+        <div class="content">
+          <h3>Trident Optic Adjustment Tool</h3>
+          <p>Compact, non-marring polymer tool for quick windage/elevation tweaks on popular pistol & carbine red dots.</p>
+          <span class="pill">Polymer | Non-marring</span>
+        </div>
+      </article>
     </div>
-  </main>
+  </section>
 
   <footer>
     <div class="footer-inner">
       <div>© <span id="year"></span> Atlas Defense Co • All rights reserved</div>
-      <div class="footer-links">
-        <a href="https://atlasdefenseco.etsy.com" target="_blank" rel="noopener">Shop</a>
-        <a href="https://www.instagram.com/atlasdefenseco" target="_blank" rel="noopener">Instagram</a>
-        <a href="#" onclick="openModal(); return false;">Privacy Policy</a>
+      <div class="footer-codes">
+        CAGE: 13TY8 &nbsp; | &nbsp; UEI: SG2KAQACEXD5
       </div>
     </div>
   </footer>
 
-  <!-- Privacy Modal -->
-  <div id="privacyModal" class="privacy-modal" role="dialog" aria-modal="true" aria-labelledby="privTitle">
-    <div class="privacy-modal-content">
-      <button class="privacy-modal-close" onclick="closeModal()" aria-label="Close privacy policy">Close</button>
-      <h2 id="privTitle">Privacy Policy</h2>
-      <p>At Atlas Defense Co, we respect your privacy and are committed to protecting your personal information. This privacy policy outlines how we collect, use, and protect your personal data when you interact with our website and services.</p>
-      <!-- (Keep your sections 1–8 here exactly as before) -->
-    </div>
-  </div>
-
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-    function openModal(){ document.getElementById("privacyModal").style.display = "flex"; }
-    function closeModal(){ document.getElementById("privacyModal").style.display = "none"; }
-    window.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeModal(); });
-    document.getElementById('privacyModal').addEventListener('click', (e)=>{
-      if(e.target.id === 'privacyModal') closeModal();
-    });
   </script>
 </body>
 </html>

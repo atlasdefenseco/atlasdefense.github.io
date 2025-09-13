@@ -5,9 +5,47 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Atlas Defense Co | Precision. Protection. Purpose.</title>
 
+  <!-- SEO / Social -->
   <meta name="description" content="Atlas Defense Co designs mission-first tools engineered for performance under pressure. The VLOK Tool and Trident Optic Tool — built for law enforcement, EMS, and shooters who demand reliability." />
   <meta name="robots" content="index,follow" />
+  <meta property="og:title" content="Atlas Defense Co" />
+  <meta property="og:description" content="Mission-first tools engineered for performance under pressure." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.atlasdefense.co/" />
+  <!-- Replace this image when you add a banner -->
+  <meta property="og:image" content="atlas-og.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Atlas Defense Co" />
+  <meta name="twitter:description" content="Mission-first tools engineered for performance under pressure." />
+  <meta name="twitter:image" content="atlas-og.jpg" />
+
+  <!-- Performance -->
+  <link rel="preconnect" href="https://www.etsy.com" crossorigin>
+  <link rel="preconnect" href="https://www.instagram.com">
   <link rel="icon" href="favicon.ico" sizes="any" />
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"Atlas Defense Co",
+    "url":"https://www.atlasdefense.co",
+    "logo":"https://www.atlasdefense.co/ADC%20Logo%20Github.png",
+    "sameAs":["https://www.instagram.com/atlasdefenseco"]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Product",
+    "name":"The VLOK Tool",
+    "brand":{"@type":"Brand","name":"Atlas Defense Co"},
+    "image":"https://www.atlasdefense.co/VLOK%20PNG.png",
+    "description":"Multi-use access tool for hinges, vehicle striker brackets, and window tracks.",
+    "url":"https://atlasdefenseco.etsy.com"
+  }
+  </script>
 
   <style>
     :root{
@@ -17,11 +55,9 @@
       --text-0:#e8eaed;
       --text-1:#b6bcc3;
       --muted:#99a2ab;
-
-      --acc-0:#5a5f66;   /* tactical gray */
-      --acc-1:#7c848c;   /* hover gray */
-      --hover-glow:#3a5f46; /* subtle tactical green glow */
-
+      --acc-0:#5a5f66;
+      --acc-1:#7c848c;
+      --hover-glow:#3a5f46;
       --border:#2a2f36;
       --shadow:0 16px 36px rgba(0,0,0,.45);
       --radius:14px;
@@ -30,7 +66,7 @@
     html, body{
       margin:0;
       background: var(--bg-0) url('https://transparenttextures.com/patterns/cartographer.png') repeat;
-      background-attachment: fixed; /* base parallax */
+      background-attachment: fixed; /* parallax base */
       color:var(--text-0);
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Inter, Roboto, "Helvetica Neue", Arial;
       line-height:1.6;
@@ -38,25 +74,19 @@
 
     .container{ max-width:1120px; margin:0 auto; padding:28px 20px; }
 
-    /* ---------- HERO ---------- */
+    /* HERO */
     .hero{text-align:center; padding:48px 0 28px;}
-    .hero img#logo{
+    #logo{
       width:min(360px, 60vw);
+      height:auto;
       filter: drop-shadow(0 8px 18px rgba(0,0,0,.6));
       transition: transform .3s ease, filter .3s ease;
     }
-    .hero img#logo:hover{
-      transform: scale(1.05);
-      filter: drop-shadow(0 0 12px rgba(255,255,255,.35));
-    }
-    .tagline{
-      margin:18px auto 8px; font-weight:900; text-transform:uppercase;
-      font-size:clamp(22px,3.2vw,34px);
-    }
+    #logo:hover{ transform: scale(1.05); filter: drop-shadow(0 0 12px rgba(255,255,255,.35)); }
+    .tagline{ margin:18px auto 8px; font-weight:900; text-transform:uppercase; font-size:clamp(22px,3.2vw,34px); }
     .sub{ color:var(--text-1); max-width:760px; margin:10px auto 10px; font-size:18px; }
     .sub-note{ color:var(--text-1); max-width:760px; margin:8px auto 22px; font-size:16px; opacity:.9; }
 
-    /* CTA Button */
     .cta{
       display:inline-flex; background: linear-gradient(180deg, var(--acc-0), #4d535a);
       color:#f6f7f8; font-weight:800; text-transform:uppercase; letter-spacing:.6px;
@@ -67,26 +97,18 @@
     .cta:hover{ background: linear-gradient(180deg, var(--acc-1), #6c747b); }
     .cta:active{ transform: translateY(1px); box-shadow:0 8px 18px rgba(0,0,0,.22); }
 
-    /* Mini pill buttons under CTA */
-    .mini-links{
-      margin-top:16px; display:flex; justify-content:center; gap:12px; flex-wrap:wrap;
-    }
+    .mini-links{ margin-top:16px; display:flex; justify-content:center; gap:12px; flex-wrap:wrap; }
     .mini-links a{
       display:inline-block; padding:8px 16px; background:var(--bg-2);
       border:1px solid var(--border); border-radius:999px; color:var(--text-1);
       font-size:13px; font-weight:600; text-decoration:none;
       transition: background .2s ease, color .2s ease, border-color .2s ease, box-shadow .2s ease;
     }
-    .mini-links a:hover{
-      background:var(--acc-0); color:#fff; border-color:var(--acc-1);
-      box-shadow:0 0 8px var(--hover-glow);
-    }
+    .mini-links a:hover{ background:var(--acc-0); color:#fff; border-color:var(--acc-1); box-shadow:0 0 8px var(--hover-glow); }
 
-    /* ---------- PRODUCTS ---------- */
+    /* PRODUCTS */
     .section{ margin:34px 0; }
-    .cards{
-      display:flex; justify-content:center; gap:18px; flex-wrap:wrap;
-    }
+    .cards{ display:flex; justify-content:center; gap:18px; flex-wrap:wrap; }
     .card-link{ text-decoration:none; color:inherit; flex:1 1 360px; max-width:480px; }
     .card{
       background:var(--bg-1); border:1px solid var(--border); border-radius:var(--radius);
@@ -94,58 +116,68 @@
       transition: transform .2s ease, box-shadow .2s ease;
     }
     .card:hover{ transform: translateY(-4px); box-shadow:0 20px 40px rgba(0,0,0,.6); }
-    .card img{ width:100%; height:auto; display:block; background:#111; }
-    .card .content{ padding:14px 14px 16px; }
-    .card h3{ margin:4px 0 6px; font-size:18px; }
-    .card p{ margin:0; color:var(--text-1); font-size:14.5px; }
-    .pill{
-      display:inline-block; margin-top:10px; font-size:12px; color:#e7ecf0;
-      background:#2a3137; border-radius:999px; padding:6px 10px;
-    }
+    .card picture, .card img{ width:100%; display:block; background:#111; }
+    .card img{ height:auto; transition: transform .35s ease; }
+    @media (hover:hover){ .card:hover img{ transform: scale(1.03); } }
+    .content{ padding:14px 14px 16px; }
+    .content h3{ margin:4px 0 6px; font-size:18px; }
+    .content p{ margin:0; color:var(--text-1); font-size:14.5px; }
+    .pill{ display:inline-block; margin-top:10px; font-size:12px; color:#e7ecf0; background:#2a3137; border-radius:999px; padding:6px 10px; }
 
-    /* ---------- FOOTER ---------- */
+    /* EMAIL CAPTURE */
+    .signup{
+      margin:38px auto 10px; max-width:620px; background:var(--bg-1); border:1px solid var(--border);
+      border-radius:var(--radius); box-shadow:var(--shadow); padding:16px;
+      text-align:center;
+    }
+    .signup h3{ margin:4px 0 8px; font-size:18px; }
+    .signup p{ margin:0 0 12px; color:var(--text-1); font-size:14px; }
+    .signup form{ display:flex; gap:10px; justify-content:center; flex-wrap:wrap; }
+    .signup input[type="email"]{
+      background:var(--bg-2); border:1px solid var(--border); color:var(--text-0);
+      border-radius:10px; padding:10px 12px; min-width:260px;
+    }
+    .signup button{
+      background: linear-gradient(180deg, var(--acc-0), #4d535a); color:#fff; font-weight:700;
+      border:1px solid #3d4248; border-radius:10px; padding:10px 16px; cursor:pointer;
+      transition: background .2s ease, box-shadow .2s ease;
+    }
+    .signup button:hover{ background: linear-gradient(180deg, var(--acc-1), #6c747b); box-shadow:0 0 8px var(--hover-glow); }
+
+    /* FAQ */
+    .faq{ max-width:860px; margin:30px auto; }
+    .faq details{
+      background:var(--bg-1); border:1px solid var(--border); border-radius:12px; padding:12px 14px; margin-bottom:10px;
+    }
+    .faq summary{ cursor:pointer; font-weight:700; }
+    .faq p{ color:var(--text-1); margin:8px 0 0; }
+
+    /* FOOTER */
     footer{
       margin-top: 36px; background: var(--bg-1);
       border-top: 1px solid var(--border); box-shadow: var(--shadow);
     }
-    .footer-inner{
-      max-width: 1120px; margin: 0 auto; padding: 18px 20px;
-      text-align:center; color: var(--text-1); font-size: 13px;
-    }
-    .footer-links{
-      margin-top:8px; display:flex; gap:14px; justify-content:center; flex-wrap:wrap;
-    }
-    .footer-links a{
-      color:var(--text-1); text-decoration:none; border-bottom:1px solid transparent;
-      transition: color .15s ease, border-color .15s ease;
-    }
+    .footer-inner{ max-width: 1120px; margin: 0 auto; padding: 18px 20px; text-align:center; color: var(--text-1); font-size: 13px; }
+    .footer-links{ margin-top:8px; display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+    .footer-links a{ color:var(--text-1); text-decoration:none; border-bottom:1px solid transparent; transition: color .15s ease, border-color .15s ease; }
     .footer-links a:hover{ color:#cfe1ea; border-color:#cfe1ea; }
-    .footer-codes{ font-size:13px; color:var(--muted); margin-top:10px; }
+    .footer-codes{ margin-top:10px; }
+    .code-chip{
+      display:inline-flex; align-items:center; gap:6px; background:#1b2025; border:1px solid var(--border);
+      border-radius:10px; padding:6px 10px; margin:2px 6px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; color:#d7dee5; cursor:pointer;
+    }
+    .copied{ color:#a7f3d0; }
 
-    /* ---------- PRIVACY MODAL ---------- */
-    .privacy-modal{
-      display:none; position: fixed; inset: 0; background: rgba(0,0,0,.72);
-      z-index: 1000; align-items: center; justify-content: center; padding: 20px;
-    }
-    .privacy-modal-content{
-      background: var(--bg-2); border:1px solid var(--border); color: var(--text-0);
-      padding: 18px 20px 24px; width: 100%; max-width: 760px; max-height: 82vh; overflow:auto;
-      border-radius: var(--radius); box-shadow: var(--shadow); text-align:left;
-    }
-    .privacy-modal h2{ margin: 6px 0 8px; }
-    .privacy-modal h3{ margin: 18px 0 6px; }
-    .privacy-modal p, .privacy-modal li{ color: var(--text-1); }
-    .privacy-modal-close{
-      color: var(--text-0); font-size: 14px; font-weight: 700; background: transparent;
-      border:1px solid var(--border); border-radius: 10px; padding: 6px 10px; cursor: pointer; float:right;
-      transition: border-color .15s ease, color .15s ease, background .15s ease;
-    }
-    .privacy-modal-close:hover{ color:#0b0d0e; background:var(--acc-1); border-color:#6b757e; }
+    /* ACCESSIBILITY */
+    :focus-visible{ outline:2px solid #9fb7c5; outline-offset:2px; }
 
-    /* ---------- ACCESSIBILITY: REDUCED MOTION ---------- */
+    /* REDUCED MOTION */
     @media (prefers-reduced-motion: reduce){
       html, body{ background-attachment: scroll; }
+      #logo{ transition:none; }
+      .card, .card img{ transition:none; }
     }
+
     @media (max-width: 920px){
       .card-link{ flex-basis: 100%; max-width: 100%; }
     }
@@ -155,29 +187,30 @@
 
   <!-- HERO -->
   <header class="hero container">
-    <img id="logo" src="ADC%20Logo%20Github.png" alt="Atlas Defense Co Logo" />
+    <img id="logo" src="ADC%20Logo%20Github.png" alt="Atlas Defense Co Logo" width="360" height="360" />
     <h1 class="tagline">Precision. Protection. Purpose.</h1>
-    <p class="sub">
-      Mission-first tools engineered for performance under pressure.
-    </p>
+    <p class="sub">Mission-first tools engineered for performance under pressure.</p>
     <p class="sub-note">Designed, tested, and built in Pennsylvania.</p>
-    <a class="cta" href="https://atlasdefenseco.etsy.com" target="_blank" rel="noopener">Shop Atlas on Etsy</a>
+    <a class="cta" href="https://atlasdefenseco.etsy.com" target="_blank" rel="noopener" aria-label="Shop Atlas on Etsy">Shop Atlas on Etsy</a>
 
-    <div class="mini-links">
-      <a href="https://www.instagram.com/atlasdefenseco" target="_blank" rel="noopener">📷 Instagram</a>
-      <a href="mailto:info@atlasdefense.co">✉️ Contact</a>
+    <div class="mini-links" aria-label="Secondary links">
+      <a href="https://www.instagram.com/atlasdefenseco" target="_blank" rel="noopener" aria-label="Visit Atlas Defense Co on Instagram">📷 Instagram</a>
+      <a href="mailto:info@atlasdefense.co" aria-label="Email Atlas Defense Co">✉️ Contact</a>
     </div>
   </header>
 
   <!-- PRODUCTS -->
-  <section class="container section" id="products">
-    <h2 style="text-align:center;">Featured Gear</h2>
+  <section class="container section" id="products" aria-labelledby="prodTitle">
+    <h2 id="prodTitle" style="text-align:center;">Featured Gear</h2>
     <div class="cards">
 
       <!-- VLOK -->
-      <a class="card-link" href="https://atlasdefenseco.etsy.com" target="_blank" rel="noopener">
+      <a class="card-link" href="https://atlasdefenseco.etsy.com" target="_blank" rel="noopener" aria-label="View The VLOK Tool on Etsy">
         <div class="card">
-          <img src="VLOK%20PNG.png" alt="The VLOK Tool product image" />
+          <picture>
+            <!-- If you add a WebP, put it here (e.g., <source srcset="VLOK.webp" type="image/webp">) -->
+            <img src="VLOK%20PNG.png" alt="The VLOK Tool product image" width="960" height="600" loading="lazy" />
+          </picture>
           <div class="content">
             <h3>The VLOK Tool</h3>
             <p>
@@ -195,9 +228,12 @@
       </a>
 
       <!-- Trident -->
-      <a class="card-link" href="https://atlasdefenseco.etsy.com" target="_blank" rel="noopener">
+      <a class="card-link" href="https://atlasdefenseco.etsy.com" target="_blank" rel="noopener" aria-label="View Trident Optic Adjustment Tool on Etsy">
         <div class="card">
-          <img src="Trident%20PNG.png" alt="Trident Optic Adjustment Tool product image" />
+          <picture>
+            <!-- If you add a WebP, put it here (e.g., <source srcset="Trident.webp" type="image/webp">) -->
+            <img src="Trident%20PNG.png" alt="Trident Optic Adjustment Tool product image" width="960" height="600" loading="lazy" />
+          </picture>
           <div class="content">
             <h3>Trident Optic Adjustment Tool</h3>
             <p>
@@ -217,18 +253,51 @@
     </div>
   </section>
 
+  <!-- EMAIL CAPTURE (hook up later to your service of choice) -->
+  <section class="signup container" aria-labelledby="signupTitle">
+    <h3 id="signupTitle">Get product drops & restocks</h3>
+    <p>No spam — just mission-ready gear updates.</p>
+    <form onsubmit="event.preventDefault(); alert('Thanks! We’ll keep you posted.');">
+      <label class="sr-only" for="email">Email</label>
+      <input id="email" type="email" name="email" placeholder="you@yourdomain.com" required />
+      <button type="submit" aria-label="Subscribe to updates">Subscribe</button>
+    </form>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq container" aria-labelledby="faqTitle">
+    <h3 id="faqTitle">FAQ</h3>
+
+    <details>
+      <summary>Where do you ship from and how fast?</summary>
+      <p>We ship from Pennsylvania. Most in-stock items leave within 2–3 business days.</p>
+    </details>
+
+    <details>
+      <summary>Returns & warranty?</summary>
+      <p>30-day returns on unused items. Manufacturing defects are covered — contact us at <a href="mailto:info@atlasdefense.co">info@atlasdefense.co</a>.</p>
+    </details>
+
+    <details>
+      <summary>Is the Trident tool metal?</summary>
+      <p>No — it’s a high-strength polymer designed to be non-marring and pocket-friendly.</p>
+    </details>
+  </section>
+
   <!-- FOOTER -->
   <footer>
     <div class="footer-inner">
       <div>© <span id="year"></span> Atlas Defense Co • All rights reserved</div>
-      <div class="footer-links">
-        <a href="https://atlasdefenseco.etsy.com" target="_blank" rel="noopener">Shop</a>
-        <a href="https://www.instagram.com/atlasdefenseco" target="_blank" rel="noopener">Instagram</a>
-        <a href="mailto:info@atlasdefense.co">Contact</a>
-        <a href="#" onclick="openModal(); return false;">Privacy Policy</a>
+      <div class="footer-links" aria-label="Footer links">
+        <a href="https://atlasdefenseco.etsy.com" target="_blank" rel="noopener" aria-label="Shop on Etsy">Shop</a>
+        <a href="https://www.instagram.com/atlasdefenseco" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a>
+        <a href="mailto:info@atlasdefense.co" aria-label="Email Atlas Defense Co">Contact</a>
+        <a href="#" onclick="openModal(); return false;" aria-label="Open privacy policy">Privacy Policy</a>
       </div>
-      <div class="footer-codes">
-        CAGE: 13TY8 &nbsp; | &nbsp; UEI: SG2KAQACEXD5
+
+      <div class="footer-codes" aria-label="Identifiers">
+        <span class="code-chip" id="cage" role="button" tabindex="0" title="Click to copy">CAGE: <strong>13TY8</strong></span>
+        <span class="code-chip" id="uei" role="button" tabindex="0" title="Click to copy">UEI: <strong>SG2KAQACEXD5</strong></span>
       </div>
     </div>
   </footer>
@@ -257,16 +326,16 @@
       <p>We do not sell, rent, or trade your personal information to third parties. We may share your information with trusted partners or service providers who assist us in operating our business and serving you, but they are required to keep your information confidential.</p>
 
       <h3>5. Your Rights</h3>
-      <p>You have the right to access, correct, or delete your personal data. If you wish to opt out of communications, you can unsubscribe from our email list at any time by clicking the unsubscribe link in the emails we send you, or by contacting us directly.</p>
+      <p>You have the right to access, correct, or delete your personal data. If you wish to opt out of communications, you can unsubscribe from our email list at any time by clicking the unsubscribe link in our emails or by contacting us directly.</p>
 
       <h3>6. Cookies</h3>
       <p>Our website may use cookies to enhance your browsing experience. Cookies are small text files stored on your device that allow us to track website usage and remember preferences. You can control cookie settings through your browser.</p>
 
       <h3>7. Changes to This Privacy Policy</h3>
-      <p>We reserve the right to update this privacy policy at any time. Any changes will be posted on this page, and the date of the latest revision will be indicated at the bottom of the policy.</p>
+      <p>We may update this privacy policy from time to time. Any changes will be posted on this page with a revised effective date.</p>
 
       <h3>8. Contact Us</h3>
-      <p>If you have any questions about this privacy policy or how we handle your personal data, please contact us at <a href="mailto:info@atlasdefense.co">info@atlasdefense.co</a>.</p>
+      <p>Questions? Email <a href="mailto:info@atlasdefense.co">info@atlasdefense.co</a>.</p>
     </div>
   </div>
 
@@ -282,7 +351,7 @@
       if(e.target.id === 'privacyModal') closeModal();
     });
 
-    // Subtle parallax: adjust background position on scroll (disabled if prefers-reduced-motion)
+    // Parallax background (disabled if prefers-reduced-motion)
     (function(){
       const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
       if (mq.matches) return;
@@ -290,13 +359,32 @@
       window.addEventListener('scroll', () => {
         if (raf) return;
         raf = requestAnimationFrame(() => {
-          const y = window.scrollY * 0.15; // parallax intensity
+          const y = window.scrollY * 0.15;
           document.documentElement.style.backgroundPosition = `center ${-y}px`;
           document.body.style.backgroundPosition = `center ${-y}px`;
           raf = null;
         });
       }, { passive: true });
     })();
+
+    // Click-to-copy CAGE/UEI
+    function makeCopyable(id){
+      const el = document.getElementById(id);
+      if(!el) return;
+      el.addEventListener('click', () => copyText(el));
+      el.addEventListener('keydown', (e) => { if(e.key === 'Enter' || e.key === ' ') copyText(el); });
+    }
+    function copyText(el){
+      const txt = el.textContent.replace(/^\s+|\s+$/g,'');
+      navigator.clipboard.writeText(txt).then(()=>{
+        el.classList.add('copied');
+        const prev = el.innerHTML;
+        el.innerHTML = 'Copied ✓';
+        setTimeout(()=>{ el.innerHTML = prev; el.classList.remove('copied'); }, 1200);
+      }).catch(()=>{ /* noop */ });
+    }
+    makeCopyable('cage');
+    makeCopyable('uei');
   </script>
 </body>
 </html>

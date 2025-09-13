@@ -29,8 +29,8 @@
 
     html, body{
       margin:0;
-      /* Subtle topo map pattern */
       background: var(--bg-0) url('https://transparenttextures.com/patterns/cartographer.png') repeat;
+      background-attachment: fixed; /* base parallax */
       color:var(--text-0);
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Inter, Roboto, "Helvetica Neue", Arial;
       line-height:1.6;
@@ -53,7 +53,8 @@
       margin:18px auto 8px; font-weight:900; text-transform:uppercase;
       font-size:clamp(22px,3.2vw,34px);
     }
-    .sub{ color:var(--text-1); max-width:760px; margin:10px auto 22px; font-size:18px; }
+    .sub{ color:var(--text-1); max-width:760px; margin:10px auto 10px; font-size:18px; }
+    .sub-note{ color:var(--text-1); max-width:760px; margin:8px auto 22px; font-size:16px; opacity:.9; }
 
     /* CTA Button */
     .cta{
@@ -141,7 +142,10 @@
     }
     .privacy-modal-close:hover{ color:#0b0d0e; background:var(--acc-1); border-color:#6b757e; }
 
-    /* ---------- RESPONSIVE ---------- */
+    /* ---------- ACCESSIBILITY: REDUCED MOTION ---------- */
+    @media (prefers-reduced-motion: reduce){
+      html, body{ background-attachment: scroll; }
+    }
     @media (max-width: 920px){
       .card-link{ flex-basis: 100%; max-width: 100%; }
     }
@@ -154,8 +158,9 @@
     <img id="logo" src="ADC%20Logo%20Github.png" alt="Atlas Defense Co Logo" />
     <h1 class="tagline">Precision. Protection. Purpose.</h1>
     <p class="sub">
-      Mission-first tools engineered for performance under pressure. Designed, tested, and built in Pennsylvania.
+      Mission-first tools engineered for performance under pressure.
     </p>
+    <p class="sub-note">Designed, tested, and built in Pennsylvania.</p>
     <a class="cta" href="https://atlasdefenseco.etsy.com" target="_blank" rel="noopener">Shop Atlas on Etsy</a>
 
     <div class="mini-links">
@@ -276,6 +281,22 @@
     document.getElementById('privacyModal').addEventListener('click', (e)=>{
       if(e.target.id === 'privacyModal') closeModal();
     });
+
+    // Subtle parallax: adjust background position on scroll (disabled if prefers-reduced-motion)
+    (function(){
+      const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+      if (mq.matches) return;
+      let raf = null;
+      window.addEventListener('scroll', () => {
+        if (raf) return;
+        raf = requestAnimationFrame(() => {
+          const y = window.scrollY * 0.15; // parallax intensity
+          document.documentElement.style.backgroundPosition = `center ${-y}px`;
+          document.body.style.backgroundPosition = `center ${-y}px`;
+          raf = null;
+        });
+      }, { passive: true });
+    })();
   </script>
 </body>
 </html>

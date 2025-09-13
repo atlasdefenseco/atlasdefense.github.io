@@ -1,42 +1,141 @@
-<section class="container section" id="products">
-  <h2 style="text-align:center;">Featured Gear</h2>
-  <div class="cards" style="justify-content:center; display:flex; gap:18px; flex-wrap:wrap;">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Atlas Defense Co | Precision. Protection. Purpose.</title>
 
-    <!-- VLOK -->
-    <article class="card" style="max-width:480px; flex:1 1 360px;">
-      <div class="ph">The VLOK Tool</div>
-      <div class="content">
-        <h3>The VLOK Tool</h3>
-        <p>
-          The VLOK Tool gives you fast, controlled access — in vehicles, buildings, and windows.
-          <br><br>
-          Hook it over a door hinge to hold it open, drop it in a vehicle’s striker bracket to stop latches from locking, or wedge it into a window track for airflow, routing, or quick entry.
-          <br><br>
-          No more slammed doors. No accidental lockouts. No wasted time.
-          <br><br>
-          Built for law enforcement, EMS, trades, and anyone working where doors and windows get in the way.
-        </p>
-        <span class="pill">6061-T6 | Multi-Use</span>
+  <meta name="description" content="Atlas Defense Co designs mission-first tools and accessories engineered for performance under pressure. The VLOK Tool and Trident Optic Tool — built for law enforcement, EMS, and shooters who demand reliability." />
+  <meta name="robots" content="index,follow" />
+
+  <link rel="icon" href="favicon.ico" sizes="any" />
+
+  <style>
+    :root{
+      --bg-0:#0f1113;
+      --bg-1:#14171a;
+      --bg-2:#1a1e22;
+      --text-0:#e8eaed;
+      --text-1:#b6bcc3;
+      --muted:#99a2ab;
+      --acc-0:#5a5f66;
+      --acc-1:#7c848c;
+      --border:#2a2f36;
+      --shadow:0 16px 36px rgba(0,0,0,.45);
+      --radius:14px;
+    }
+
+    html, body{
+      margin:0;
+      background: var(--bg-0) url('https://www.transparenttextures.com/patterns/carbon-fibre-v2.png') repeat;
+      color:var(--text-0);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Inter, Roboto, "Helvetica Neue", Arial;
+      line-height:1.6;
+    }
+
+    .container{ max-width:1120px; margin:0 auto; padding:28px 20px; }
+
+    /* Hero */
+    .hero{text-align:center; padding:48px 0 28px;}
+    .hero img#logo{ width:min(360px, 60vw); filter: drop-shadow(0 12px 28px rgba(0,0,0,.55)); }
+    .tagline{ margin:18px auto 8px; font-weight:900; text-transform:uppercase; font-size:clamp(22px,3.2vw,34px);}
+    .sub{ color:var(--text-1); max-width:760px; margin:10px auto 22px; font-size:18px; }
+
+    /* Button */
+    .cta{ display:inline-flex; background: linear-gradient(180deg, var(--acc-0), #4d535a);
+      color:#f6f7f8; font-weight:800; text-transform:uppercase;
+      padding:14px 28px; border-radius:var(--radius); text-decoration:none;
+      border:1px solid #3d4248; transition: background .2s ease; }
+    .cta:hover{ background: linear-gradient(180deg, var(--acc-1), #6c747b); }
+
+    /* Products */
+    .section{ margin:34px 0; }
+    .cards{ display:flex; justify-content:center; gap:18px; flex-wrap:wrap;}
+    .card{ background:var(--bg-1); border:1px solid var(--border); border-radius:var(--radius);
+      box-shadow:var(--shadow); overflow:hidden; display:flex; flex-direction:column; max-width:480px; flex:1 1 360px;}
+    .card .ph{ background:linear-gradient(180deg, #161a1e, #111416); height:160px; display:flex;
+      align-items:center; justify-content:center; color:#85909a; font-weight:700; font-size:14px;}
+    .card .content{ padding:14px 14px 16px;}
+    .card h3{ margin:4px 0 6px; font-size:18px;}
+    .card p{ margin:0; color:var(--text-1); font-size:14.5px;}
+    .pill{ display:inline-block; margin-top:10px; font-size:12px; color:#e7ecf0;
+      background:#2a3137; border-radius:999px; padding:6px 10px;}
+
+    /* Footer */
+    footer{ margin-top: 36px; background: var(--bg-1); border-top: 1px solid var(--border); box-shadow: var(--shadow);}
+    .footer-inner{ max-width: 1120px; margin: 0 auto; padding: 18px 20px;
+      text-align:center; color: var(--text-1); font-size: 13px;}
+    .footer-codes{ font-size:13px; color:var(--muted); margin-top:6px;}
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <header class="hero container">
+    <img id="logo" src="ADC%20Logo%20Github.png" alt="Atlas Defense Co Logo" />
+    <h1 class="tagline">Precision. Protection. Purpose.</h1>
+    <p class="sub">
+      Mission-first tools engineered for performance under pressure. Designed, tested, and built in Pennsylvania.
+    </p>
+    <a class="cta" href="https://atlasdefenseco.etsy.com" target="_blank" rel="noopener">Shop Atlas on Etsy</a>
+  </header>
+
+  <!-- Products -->
+  <section class="container section" id="products">
+    <h2 style="text-align:center;">Featured Gear</h2>
+    <div class="cards">
+
+      <!-- VLOK -->
+      <article class="card">
+        <div class="ph">The VLOK Tool</div>
+        <div class="content">
+          <h3>The VLOK Tool</h3>
+          <p>
+            The VLOK Tool gives you fast, controlled access — in vehicles, buildings, and windows.
+            <br><br>
+            Hook it over a door hinge to hold it open, drop it in a vehicle’s striker bracket to stop latches from locking, or wedge it into a window track for airflow, routing, or quick entry.
+            <br><br>
+            No more slammed doors. No accidental lockouts. No wasted time.
+            <br><br>
+            Built for law enforcement, EMS, trades, and anyone working where doors and windows get in the way.
+          </p>
+          <span class="pill">6061-T6 | Multi-Use</span>
+        </div>
+      </article>
+
+      <!-- Trident -->
+      <article class="card">
+        <div class="ph">Trident — Optic Tool</div>
+        <div class="content">
+          <h3>Trident Optic Adjustment Tool</h3>
+          <p>
+            Compact, non-marring polymer tool designed for shooters who demand precision and reliability.
+            <br><br>
+            Compatible with leading optics — including Trijicon RMR-HD/SRO, Aimpoint Micro, EOTech EFLX, and Vortex Defender.
+            <br><br>
+            Strong polymer build protects gear from scratches, while staying lightweight enough to ride in your pocket, admin pouch, or range kit.
+            <br><br>
+            No coins, no makeshift fixes — just quick, confident adjustments when it matters.
+          </p>
+          <span class="pill">Polymer | Non-Marring</span>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div>© <span id="year"></span> Atlas Defense Co • All rights reserved</div>
+      <div class="footer-codes">
+        CAGE: 13TY8 &nbsp; | &nbsp; UEI: SG2KAQACEXD5
       </div>
-    </article>
+    </div>
+  </footer>
 
-    <!-- Trident Tool -->
-    <article class="card" style="max-width:480px; flex:1 1 360px;">
-      <div class="ph">Trident — Optic Tool</div>
-      <div class="content">
-        <h3>Trident Optic Adjustment Tool</h3>
-        <p>
-          Compact, non-marring polymer tool designed for shooters who demand precision and reliability.
-          <br><br>
-          Compatible with leading optics — including Trijicon RMR-HD/SRO, Aimpoint Micro, EOTech EFLX, and Vortex Defender.
-          <br><br>
-          Strong polymer build protects gear from scratches, while staying lightweight enough to ride in your pocket, admin pouch, or range kit.
-          <br><br>
-          No coins, no makeshift fixes — just quick, confident adjustments when it matters.
-        </p>
-        <span class="pill">Polymer | Non-Marring</span>
-      </div>
-    </article>
-
-  </div>
-</section>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

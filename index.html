@@ -33,7 +33,7 @@
       --muted:#99a2ab;
 
       --acc-0:#5a5f66;     /* tactical gray */
-      --acc-1:#000000;     /* hover black */
+      --acc-1:#222222;     /* hover dark gray */
       --glow:#3a5f46;      /* subtle tactical green */
       --glow-soft: rgba(58,95,70,.6);
 
@@ -45,7 +45,7 @@
     html, body{
       margin:0;
       background: var(--bg-0) url('https://transparenttextures.com/patterns/cartographer.png') repeat;
-      background-attachment: fixed; /* parallax base */
+      background-attachment: fixed;
       color:var(--text-0);
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Inter, Roboto, "Helvetica Neue", Arial;
       line-height:1.6;
@@ -59,13 +59,12 @@
       width:min(360px, 60vw);
       height:auto;
       filter: drop-shadow(0 8px 18px rgba(0,0,0,.6));
-      transition: transform .3s ease, filter .3s ease, box-shadow .3s ease;
+      transition: transform .3s ease, filter .3s ease;
     }
     #logo:hover{
       transform: scale(1.05);
-      box-shadow: 0 0 20px rgba(0,0,0,0.85); /* black glow on hover */
+      filter: drop-shadow(0 0 20px rgba(0,0,0,.9)); /* black glow following PNG edges */
     }
-
     .tagline{ margin:18px auto 8px; font-weight:900; text-transform:uppercase; font-size:clamp(22px,3.2vw,34px); }
     .sub{ color:var(--text-1); max-width:760px; margin:10px auto 10px; font-size:18px; text-wrap:balance; }
     .sub-note{ color:var(--text-1); max-width:760px; margin:8px auto 22px; font-size:16px; opacity:.9; }
@@ -119,97 +118,51 @@
       background:#2a3137; border-radius:999px; padding:6px 10px;
     }
 
-    /* ---------- EMAIL CAPTURE (Google Form link) ---------- */
-    .signup{
-      margin:38px auto 10px; max-width:620px; background:var(--bg-1); border:1px solid var(--border);
-      border-radius:var(--radius); box-shadow:var(--shadow); padding:18px 16px; text-align:center;
-    }
+    /* ---------- EMAIL CAPTURE ---------- */
+    .signup{ margin:38px auto 10px; max-width:620px; background:var(--bg-1); border:1px solid var(--border); border-radius:var(--radius); box-shadow:var(--shadow); padding:18px 16px; text-align:center; }
     .signup h3{ margin:4px 0 8px; font-size:18px; }
     .signup p{ margin:0 0 14px; color:var(--text-1); font-size:14px; }
-    .signup .signup-btn{
-      display:inline-flex; align-items:center; gap:10px;
-      background: linear-gradient(180deg, var(--acc-0), #4d535a); color:#fff; font-weight:700;
-      border:1px solid #3d4248; border-radius:10px; padding:12px 18px; cursor:pointer; text-decoration:none;
-      transition: background .2s ease, box-shadow .2s ease, filter .2s ease;
-    }
+    .signup .signup-btn{ display:inline-flex; align-items:center; gap:10px; background: linear-gradient(180deg, var(--acc-0), #4d535a); color:#fff; font-weight:700; border:1px solid #3d4248; border-radius:10px; padding:12px 18px; cursor:pointer; text-decoration:none; transition: background .2s ease, box-shadow .2s ease, filter .2s ease; }
     .signup .signup-btn:hover{ background: linear-gradient(180deg, var(--acc-1), #6c747b); box-shadow:0 0 8px var(--glow); filter:saturate(1.05); }
 
     /* ---------- FAQ ---------- */
     .faq{ max-width:860px; margin:30px auto; }
-    .faq details{
-      background:var(--bg-1); border:1px solid var(--border); border-radius:12px; padding:12px 14px; margin-bottom:10px;
-      transition: box-shadow .2s ease;
-    }
+    .faq details{ background:var(--bg-1); border:1px solid var(--border); border-radius:12px; padding:12px 14px; margin-bottom:10px; transition: box-shadow .2s ease; }
     .faq details:hover{ box-shadow:0 0 0 4px rgba(58,95,70,.15); }
     .faq summary{ cursor:pointer; font-weight:700; }
     .faq p{ color:var(--text-1); margin:8px 0 0; }
 
     /* ---------- FOOTER ---------- */
-    footer{
-      margin-top: 36px; background: var(--bg-1);
-      border-top: 1px solid var(--border); box-shadow: var(--shadow);
-    }
-    .footer-inner{
-      max-width: 1120px; margin: 0 auto; padding: 18px 20px;
-      text-align:center; color: var(--text-1); font-size: 13px;
-    }
-    .footer-links{
-      margin-top:8px; display:flex; gap:14px; justify-content:center; flex-wrap:wrap;
-    }
-    .footer-links a{
-      color:var(--text-1); text-decoration:none; border-bottom:1px solid transparent;
-      transition: color .15s ease, border-color .15s ease;
-    }
+    footer{ margin-top: 36px; background: var(--bg-1); border-top: 1px solid var(--border); box-shadow: var(--shadow); }
+    .footer-inner{ max-width: 1120px; margin: 0 auto; padding: 18px 20px; text-align:center; color: var(--text-1); font-size: 13px; }
+    .footer-links{ margin-top:8px; display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+    .footer-links a{ color:var(--text-1); text-decoration:none; border-bottom:1px solid transparent; transition: color .15s ease, border-color .15s ease; }
     .footer-links a:hover{ color:#cfe1ea; border-color:#cfe1ea; }
     .footer-codes{ margin-top:10px; }
-    .code-chip{
-      display:inline-flex; align-items:center; gap:6px; background:#1b2025; border:1px solid var(--border);
-      border-radius:10px; padding:6px 10px; margin:2px 6px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; color:#d7dee5; cursor:pointer;
-    }
+    .code-chip{ display:inline-flex; align-items:center; gap:6px; background:#1b2025; border:1px solid var(--border); border-radius:10px; padding:6px 10px; margin:2px 6px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; color:#d7dee5; cursor:pointer; }
     .copied{ color:#a7f3d0; }
 
     /* ---------- PRIVACY MODAL ---------- */
-    .privacy-modal{
-      display:none; /* starts hidden */
-      position: fixed; inset: 0; background: rgba(0,0,0,.72);
-      z-index: 1000; align-items: center; justify-content: center; padding: 20px;
-    }
-    .privacy-modal-content{
-      background: var(--bg-2); border:1px solid var(--border); color: var(--text-0);
-      padding: 18px 20px 24px; width: 100%; max-width: 760px; max-height: 82vh; overflow:auto;
-      border-radius: var(--radius); box-shadow: var(--shadow); text-align:left;
-    }
+    .privacy-modal{ display:none; position: fixed; inset: 0; background: rgba(0,0,0,.72); z-index: 1000; align-items: center; justify-content: center; padding: 20px; }
+    .privacy-modal-content{ background: var(--bg-2); border:1px solid var(--border); color: var(--text-0); padding: 18px 20px 24px; width: 100%; max-width: 760px; max-height: 82vh; overflow:auto; border-radius: var(--radius); box-shadow: var(--shadow); text-align:left; }
     .privacy-modal h2{ margin: 6px 0 8px; }
     .privacy-modal h3{ margin: 18px 0 6px; }
     .privacy-modal p, .privacy-modal li{ color: var(--text-1); }
-    .privacy-modal-close{
-      color: var(--text-0); font-size: 14px; font-weight: 700; background: transparent;
-      border:1px solid var(--border); border-radius: 10px; padding: 6px 10px; cursor: pointer; float:right;
-      transition: border-color .15s ease, color .15s ease, background .15s ease;
-    }
+    .privacy-modal-close{ color: var(--text-0); font-size: 14px; font-weight: 700; background: transparent; border:1px solid var(--border); border-radius: 10px; padding: 6px 10px; cursor: pointer; float:right; transition: border-color .15s ease, color .15s ease, background .15s ease; }
     .privacy-modal-close:hover{ color:#0b0d0e; background:var(--acc-1); border-color:#6b757e; }
 
-    /* ---------- ANIMATIONS: Reveal on scroll ---------- */
+    /* ---------- ANIMATIONS ---------- */
     .reveal{ opacity:0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
     .reveal.in{ opacity:1; transform: none; }
     .delay-1{ transition-delay: .06s; }
     .delay-2{ transition-delay: .12s; }
     .delay-3{ transition-delay: .18s; }
 
-    /* ---------- Sticky CTA (mobile only) ---------- */
-    .sticky-cta{
-      position: fixed; right:16px; bottom:16px; z-index:999;
-      display:none; /* default hidden on desktop */
-    }
-    .sticky-cta a{
-      display:inline-flex; background: linear-gradient(180deg, var(--acc-0), #4d535a);
-      color:#fff; font-weight:800; border:1px solid #3d4248; border-radius:999px; padding:12px 18px; text-decoration:none;
-      box-shadow:0 12px 26px rgba(0,0,0,.35); transition: transform .05s ease, box-shadow .2s ease, filter .2s ease;
-    }
+    /* ---------- Sticky CTA ---------- */
+    .sticky-cta{ position: fixed; right:16px; bottom:16px; z-index:999; display:none; }
+    .sticky-cta a{ display:inline-flex; background: linear-gradient(180deg, var(--acc-0), #4d535a); color:#fff; font-weight:800; border:1px solid #3d4248; border-radius:999px; padding:12px 18px; text-decoration:none; box-shadow:0 12px 26px rgba(0,0,0,.35); transition: transform .05s ease, box-shadow .2s ease, filter .2s ease; }
     .sticky-cta a:hover{ box-shadow:0 0 0 6px var(--glow-soft); filter:saturate(1.05); }
-    @media (max-width: 640px){
-      .sticky-cta{ display:block; }
-    }
+    @media (max-width: 640px){ .sticky-cta{ display:block; } }
 
     /* ---------- ACCESSIBILITY ---------- */
     :focus-visible{ outline:2px solid #9fb7c5; outline-offset:2px; }
@@ -221,9 +174,7 @@
       .reveal{ opacity:1; transform:none; }
     }
 
-    @media (max-width: 920px){
-      .card-link{ flex-basis: 100%; max-width: 100%; }
-    }
+    @media (max-width: 920px){ .card-link{ flex-basis: 100%; max-width: 100%; } }
   </style>
 </head>
 <body>
@@ -234,61 +185,35 @@
     <h1 class="tagline">Precision. Protection. Purpose.</h1>
     <p class="sub">Mission-first tools engineered for performance under pressure.</p>
     <p class="sub-note">Designed, tested, and built in Pennsylvania.</p>
-    <a class="cta" href="https://atlasdefenseco.etsy.com" target="_blank" rel="noopener" aria-label="Shop Atlas on Etsy">Shop Atlas on Etsy</a>
+    <a class="cta" href="https://atlasdefenseco.etsy.com" target="_blank" rel="noopener">Shop Atlas on Etsy</a>
     <div class="trust-line">Secure checkout via Etsy • Ships fast from PA</div>
-
-    <div class="mini-links" aria-label="Secondary links">
-      <a href="https://www.instagram.com/atlasdefenseco" target="_blank" rel="noopener" aria-label="Visit Atlas Defense Co on Instagram">📷 Instagram</a>
-      <a href="mailto:info@atlasdefense.co" aria-label="Email Atlas Defense Co">✉️ Contact</a>
-      <a href="mailto:info@atlasdefense.co" aria-label="Dealer inquiries">✉️ Dealer Inquiries</a>
+    <div class="mini-links">
+      <a href="https://www.instagram.com/atlasdefenseco" target="_blank" rel="noopener">📷 Instagram</a>
+      <a href="mailto:info@atlasdefense.co">✉️ Contact</a>
+      <a href="mailto:info@atlasdefense.co">✉️ Dealer Inquiries</a>
     </div>
   </header>
 
   <!-- PRODUCTS -->
-  <section class="container section" id="products" aria-labelledby="prodTitle">
-    <h2 id="prodTitle" style="text-align:center;" class="reveal">Featured Products</h2>
+  <section class="container section" id="products">
+    <h2 style="text-align:center;" class="reveal">Featured Products</h2>
     <div class="cards">
-      <!-- VLOK -->
-      <a class="card-link reveal delay-1" href="https://atlasdefenseco.etsy.com" target="_blank" rel="noopener" aria-label="View The VLOK Tool on Etsy">
+      <a class="card-link reveal delay-1" href="https://atlasdefenseco.etsy.com" target="_blank" rel="noopener">
         <div class="card">
-          <picture>
-            <!-- Add a WebP <source> here when available -->
-            <img src="VLOK%20PNG.png" alt="Atlas Defense VLOK tactical door and window control tool, 6061-T6 aluminum" width="960" height="600" loading="lazy" />
-          </picture>
+          <picture><img src="VLOK%20PNG.png" alt="Atlas Defense VLOK tactical door and window control tool" width="960" height="600" loading="lazy" /></picture>
           <div class="content">
             <h3>The VLOK Tool</h3>
-            <p>
-              The VLOK Tool gives you fast, controlled access — in vehicles, buildings, and windows.
-              <br><br>
-              Hook it over a door hinge to hold it open, drop it in a vehicle’s striker bracket to stop latches from locking, or wedge it into a window track for airflow, routing, or quick entry.
-              <br><br>
-              No more slammed doors. No accidental lockouts. No wasted time.
-              <br><br>
-              Built for law enforcement, EMS, trades, and anyone working where doors and windows get in the way.
-            </p>
+            <p>The VLOK Tool gives you fast, controlled access — in vehicles, buildings, and windows...</p>
             <span class="pill">6061-T6 | Multi-Use | Red Anodized Finish</span>
           </div>
         </div>
       </a>
-
-      <!-- Trident -->
-      <a class="card-link reveal delay-2" href="https://atlasdefenseco.etsy.com" target="_blank" rel="noopener" aria-label="View Trident Optic Adjustment Tool on Etsy">
+      <a class="card-link reveal delay-2" href="https://atlasdefenseco.etsy.com" target="_blank" rel="noopener">
         <div class="card">
-          <picture>
-            <!-- Add a WebP <source> here when available -->
-            <img src="Trident%20PNG.png" alt="Atlas Defense Trident non-marring polymer optic adjustment tool for popular red dots" width="960" height="600" loading="lazy" />
-          </picture>
+          <picture><img src="Trident%20PNG.png" alt="Atlas Defense Trident optic adjustment tool" width="960" height="600" loading="lazy" /></picture>
           <div class="content">
             <h3>Trident Optic Adjustment Tool</h3>
-            <p>
-              Compact, non-marring Nylon tool designed for shooters who demand precision and reliability.
-              <br><br>
-              Compatible with leading optics — including Trijicon RMR-HD/SRO, Aimpoint Micro, EOTech EFLX, and Vortex Defender.
-              <br><br>
-              Strong polymer build protects gear from scratches, while staying lightweight enough to ride in your pocket, admin pouch, or range kit.
-              <br><br>
-              No coins, no makeshift fixes — just quick, confident adjustments when it matters.
-            </p>
+            <p>Compact, non-marring Nylon tool designed for shooters who demand precision and reliability...</p>
             <span class="pill">Nylon | Non-Marring</span>
           </div>
         </div>
@@ -296,152 +221,23 @@
     </div>
   </section>
 
-  <!-- EMAIL SIGNUP (links to Google Form in a new tab) -->
-  <section class="signup container reveal" aria-labelledby="signupTitle">
-    <h3 id="signupTitle">Get product drops & restocks</h3>
+  <!-- EMAIL SIGNUP -->
+  <section class="signup container reveal">
+    <h3>Get product drops & restocks</h3>
     <p>No spam — just mission-ready gear updates.</p>
-    <a class="signup-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSf3I1LgPelB8bhiOMfRcSUn_fmiQF1cOove8a_hrf-SWK3pbA/viewform" target="_blank" rel="noopener" aria-label="Open Google Form signup in a new tab">
-      Signup
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H9M17 7v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </a>
-  </section>
-
-  <!-- FAQ -->
-  <section class="faq container reveal" aria-labelledby="faqTitle">
-    <h3 id="faqTitle">FAQ</h3>
-    <details>
-      <summary>Where do you ship from and how fast?</summary>
-      <p>We ship from Pennsylvania. Most in-stock items leave within 2–3 business days.</p>
-    </details>
-    <details>
-      <summary>Returns & warranty?</summary>
-      <p>30-day returns on unused items. Manufacturing defects are covered — contact us at <a href="mailto:info@atlasdefense.co">info@atlasdefense.co</a>.</p>
-    </details>
-    <details>
-      <summary>Is the Trident tool metal?</summary>
-      <p>No — it’s a high-strength polymer designed to be non-marring and pocket-friendly.</p>
-    </details>
+    <a class="signup-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSf3I1LgPelB8bhiOMfRcSUn_fmiQF1cOove8a_hrf-SWK3pbA/viewform" target="_blank" rel="noopener">Signup</a>
   </section>
 
   <!-- FOOTER -->
   <footer>
     <div class="footer-inner">
       <div>© <span id="year"></span> Atlas Defense Co • All rights reserved</div>
-      <div class="footer-links" aria-label="Footer links">
-        <a href="https://atlasdefenseco.etsy.com" target="_blank" rel="noopener" aria-label="Shop on Etsy">Shop</a>
-        <a href="https://www.instagram.com/atlasdefenseco" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a>
-        <a href="mailto:info@atlasdefense.co" aria-label="Email Atlas Defense Co">Contact</a>
-        <a href="#" onclick="openModal(); return false;" aria-label="Open privacy policy">Privacy Policy</a>
+      <div class="footer-links">
+        <a href="https://atlasdefenseco.etsy.com" target="_blank" rel="noopener">Shop</a>
+        <a href="https://www.instagram.com/atlasdefenseco" target="_blank" rel="noopener">Instagram</a>
+        <a href="mailto:info@atlasdefense.co">Contact</a>
+        <a href="#" onclick="openModal(); return false;">Privacy Policy</a>
       </div>
-      <div class="footer-codes" aria-label="Identifiers">
-        <span class="code-chip" id="cage" role="button" tabindex="0" title="Click to copy">CAGE: <strong>13TY8</strong></span>
-        <span class="code-chip" id="uei" role="button" tabindex="0" title="Click to copy">UEI: <strong>SG2KAQACEXD5</strong></span>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Sticky CTA (mobile) -->
-  <div class="sticky-cta" aria-hidden="true">
-    <a href="https://atlasdefenseco.etsy.com" target="_blank" rel="noopener">Shop Now</a>
-  </div>
-
-  <!-- PRIVACY MODAL -->
-  <div id="privacyModal" class="privacy-modal" role="dialog" aria-modal="true" aria-labelledby="privTitle">
-    <div class="privacy-modal-content">
-      <button class="privacy-modal-close" onclick="closeModal()" aria-label="Close privacy policy">Close</button>
-      <h2 id="privTitle">Privacy Policy</h2>
-      <p>At Atlas Defense Co, we respect your privacy and are committed to protecting your personal information. This privacy policy outlines how we collect, use, and protect your personal data when you interact with our website and services.</p>
-
-      <h3>1. Information We Collect</h3>
-      <p>We collect personal information, such as your name, email address, and any other details you choose to provide when you sign up for updates, contact us, or use our services. We may also collect anonymous data about your usage of our website through cookies and analytics tools.</p>
-
-      <h3>2. How We Use Your Information</h3>
-      <ul>
-        <li>Communicate with you about updates, new products, and promotions.</li>
-        <li>Provide customer support and respond to inquiries.</li>
-        <li>Analyze website usage to improve our products and services.</li>
-      </ul>
-
-      <h3>3. Data Protection</h3>
-      <p>We take the security of your personal data seriously and employ industry-standard security measures to protect it. However, no method of transmission over the internet is 100% secure, and we cannot guarantee absolute security.</p>
-
-      <h3>4. Sharing of Data</h3>
-      <p>We do not sell, rent, or trade your personal information to third parties. We may share your information with trusted partners or service providers who assist us in operating our business and serving you, but they are required to keep your information confidential.</p>
-
-      <h3>5. Your Rights</h3>
-      <p>You have the right to access, correct, or delete your personal data. If you wish to opt out of communications, you can unsubscribe from our email list at any time by clicking the unsubscribe link in the emails we send you, or by contacting us directly.</p>
-
-      <h3>6. Cookies</h3>
-      <p>Our website may use cookies to enhance your browsing experience. Cookies are small text files stored on your device that allow us to track website usage and remember preferences. You can control cookie settings through your browser.</p>
-
-      <h3>7. Changes to This Privacy Policy</h3>
-      <p>We reserve the right to update this privacy policy at any time. Any changes will be posted on this page, and the date of the latest revision will be indicated at the bottom of the policy.</p>
-
-      <h3>8. Contact Us</h3>
-      <p>If you have any questions about this privacy policy or how we handle your personal data, please contact us at <a href="mailto:info@atlasdefense.co">info@atlasdefense.co</a>.</p>
-    </div>
-  </div>
-
-  <script>
-    // Footer year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Privacy modal controls
-    function openModal(){ document.getElementById("privacyModal").style.display = "flex"; }
-    function closeModal(){ document.getElementById("privacyModal").style.display = "none"; }
-    window.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeModal(); });
-    document.getElementById('privacyModal').addEventListener('click', (e)=>{
-      if(e.target.id === 'privacyModal') closeModal();
-    });
-
-    // Parallax background (disabled if prefers-reduced-motion)
-    (function(){
-      const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
-      if (mq.matches) return;
-      let raf = null;
-      window.addEventListener('scroll', () => {
-        if (raf) return;
-        raf = requestAnimationFrame(() => {
-          const y = window.scrollY * 0.15;
-          document.documentElement.style.backgroundPosition = `center ${-y}px`;
-          document.body.style.backgroundPosition = `center ${-y}px`;
-          raf = null;
-        });
-      }, { passive: true });
-    })();
-
-    // Reveal-on-scroll
-    (function(){
-      const els = document.querySelectorAll('.reveal');
-      const io = new IntersectionObserver((entries)=>{
-        entries.forEach(entry=>{
-          if(entry.isIntersecting){
-            entry.target.classList.add('in');
-            io.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.1 });
-      els.forEach(el=> io.observe(el));
-    })();
-
-    // Click-to-copy CAGE/UEI
-    function makeCopyable(id){
-      const el = document.getElementById(id);
-      if(!el) return;
-      el.addEventListener('click', () => copyText(el));
-      el.addEventListener('keydown', (e) => { if(e.key === 'Enter' || e.key === ' ') copyText(el); });
-    }
-    function copyText(el){
-      const txt = el.textContent.replace(/^\s+|\s+$/g,'');
-      navigator.clipboard.writeText(txt).then(()=>{
-        el.classList.add('copied');
-        const prev = el.innerHTML;
-        el.innerHTML = 'Copied ✓';
-        setTimeout(()=>{ el.innerHTML = prev; el.classList.remove('copied'); }, 1200);
-      }).catch(()=>{ /* noop */ });
-    }
-    makeCopyable('cage');
-    makeCopyable('uei');
-  </script>
-</body>
-</html>
+      <div class="footer-codes">
+        <span class="code-chip" id="cage">CAGE: <strong>13TY8</strong></span>
+        <span

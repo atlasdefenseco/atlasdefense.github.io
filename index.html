@@ -33,7 +33,7 @@
       --muted:#99a2ab;
 
       --acc-0:#5a5f66;     /* tactical gray */
-      --acc-1:#000000;     /* hover gray */
+      --acc-1:#000000;     /* hover black */
       --glow:#3a5f46;      /* subtle tactical green */
       --glow-soft: rgba(58,95,70,.6);
 
@@ -59,9 +59,13 @@
       width:min(360px, 60vw);
       height:auto;
       filter: drop-shadow(0 8px 18px rgba(0,0,0,.6));
-      transition: transform .3s ease, filter .3s ease;
+      transition: transform .3s ease, filter .3s ease, box-shadow .3s ease;
     }
-    #logo:hover{ transform: scale(1.05); filter: drop-shadow(0 0 12px rgba(255,255,255,.35)); }
+    #logo:hover{
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(0,0,0,0.85); /* black glow on hover */
+    }
+
     .tagline{ margin:18px auto 8px; font-weight:900; text-transform:uppercase; font-size:clamp(22px,3.2vw,34px); }
     .sub{ color:var(--text-1); max-width:760px; margin:10px auto 10px; font-size:18px; text-wrap:balance; }
     .sub-note{ color:var(--text-1); max-width:760px; margin:8px auto 22px; font-size:16px; opacity:.9; }
@@ -226,7 +230,7 @@
 
   <!-- HERO -->
   <header class="hero container reveal">
- <img id="logo" src="ADC%20Logo%20Github%204.png" alt="Atlas Defense Co logo" width="360" height="360" />
+    <img id="logo" src="ADC%20Logo%20Github%204.png" alt="Atlas Defense Co logo" width="360" height="360" />
     <h1 class="tagline">Precision. Protection. Purpose.</h1>
     <p class="sub">Mission-first tools engineered for performance under pressure.</p>
     <p class="sub-note">Designed, tested, and built in Pennsylvania.</p>
@@ -236,7 +240,7 @@
     <div class="mini-links" aria-label="Secondary links">
       <a href="https://www.instagram.com/atlasdefenseco" target="_blank" rel="noopener" aria-label="Visit Atlas Defense Co on Instagram">📷 Instagram</a>
       <a href="mailto:info@atlasdefense.co" aria-label="Email Atlas Defense Co">✉️ Contact</a>
-      <a href="mailto:info@atlasdefense.co" aria-label="Email Atlas Defense Co">✉️ Dealer Inquires</a>
+      <a href="mailto:info@atlasdefense.co" aria-label="Dealer inquiries">✉️ Dealer Inquiries</a>
     </div>
   </header>
 
@@ -297,7 +301,7 @@
     <h3 id="signupTitle">Get product drops & restocks</h3>
     <p>No spam — just mission-ready gear updates.</p>
     <a class="signup-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSf3I1LgPelB8bhiOMfRcSUn_fmiQF1cOove8a_hrf-SWK3pbA/viewform" target="_blank" rel="noopener" aria-label="Open Google Form signup in a new tab">
-    Signup
+      Signup
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H9M17 7v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </a>
   </section>

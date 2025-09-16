@@ -286,7 +286,9 @@
         <h2 id="dealersTitle">Authorized Dealers</h2>
         <button class="dealer-modal-close" id="dealersClose" aria-label="Close dealer list">×</button>
       </div>
-      <ul id="dealersList" class="dealer-list"></ul>
+      <ul id="dealersList" class="dealer-list">
+        <li style="color: var(--text-1); padding:8px 0;">No authorized dealers at the moment. Please check back soon.</li>
+      </ul>
       <div style="text-align:right; margin-top:14px;">
         <button class="cta" id="dealersDone" type="button">Close</button>
       </div>
@@ -481,7 +483,7 @@
       el.addEventListener('keydown', (e) => { if(e.key === 'Enter' || e.key === ' ') copyText(el); });
     }
     function copyText(el){
-      const txt = el.textContent.replace(/^\\s+|\\s+$/g,'');
+      const txt = el.textContent.replace(/^\s+|\s+$/g,'');
       navigator.clipboard.writeText(txt).then(()=>{
         el.classList.add('copied');
         const prev = el.innerHTML;
@@ -494,6 +496,8 @@
 
     // ---------- DEALERS ---------- { name: "Example Tactical", url: "https://exampletactical.com" }
     const DEALERS = [
+      // Add your dealers here, e.g.:
+      // { name: "Example Tactical", url: "https://exampletactical.com" }
     ];
     const dealersBtn = document.getElementById("dealersBtn");
     const dealersModal = document.getElementById("dealersModal");
@@ -502,10 +506,12 @@
     const dealersDone = document.getElementById("dealersDone");
     let lastFocused = null;
 
-    // Build list
-    dealersList.innerHTML = DEALERS.map(d =>
-      `<li><a href="${d.url}" target="_blank" rel="noopener noreferrer">${d.name}</a></li>`
-    ).join("");
+    // Build list (keeps fallback message if empty)
+    if (DEALERS.length > 0) {
+      dealersList.innerHTML = DEALERS.map(d =>
+        `<li><a href="${d.url}" target="_blank" rel="noopener noreferrer">${d.name}</a></li>`
+      ).join("");
+    }
 
     function openDealers() {
       lastFocused = document.activeElement;

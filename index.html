@@ -220,6 +220,37 @@
     @media (max-width: 920px){
       .card-link{ flex-basis: 100%; max-width: 100%; }
     }
+
+    /* ---------- DEALER MODAL ---------- */
+    .dealer-modal {
+      display: none;
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,.75);
+      z-index: 1001; align-items: center; justify-content: center; padding: 20px;
+    }
+    .dealer-modal[aria-hidden="false"] { display:flex; }
+
+    .dealer-modal-content {
+      background: var(--bg-2); border:1px solid var(--border);
+      border-radius: var(--radius); box-shadow: var(--shadow);
+      padding: 20px; width: 100%; max-width: 640px;
+      max-height: 80vh; overflow-y:auto;
+      color: var(--text-0); text-align:left;
+    }
+    .dealer-modal-header {
+      display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;
+    }
+    .dealer-modal-header h2 { margin:0; font-size:20px; }
+    .dealer-modal-close {
+      background:transparent; border:none; color:var(--text-1);
+      font-size:22px; cursor:pointer; line-height:1;
+    }
+    .dealer-list { list-style:none; padding:0; margin:0; }
+    .dealer-list li { padding:8px 0; border-bottom:1px solid var(--border); }
+    .dealer-list a {
+      color:#cfe1ea; text-decoration:none; font-weight:600;
+    }
+    .dealer-list a:hover { text-decoration:underline; }
   </style>
 </head>
 <body>
@@ -231,6 +262,14 @@
     <p class="sub">Mission-first tools engineered for performance under pressure.</p>
     <p class="sub-note">Designed, tested, and built in the USA</p>
     <a class="cta" href="https://atlasdefenseco.etsy.com" target="_blank" rel="noopener" aria-label="Shop Atlas on Etsy">Shop Atlas Defense on Etsy</a>
+
+    <!-- NEW DEALER LOCATOR CTA -->
+    <div style="margin-top:12px;">
+      <button id="dealersBtn" class="cta" type="button" aria-haspopup="dialog" aria-controls="dealersModal">
+        Authorized Dealers
+      </button>
+    </div>
+
     <div class="trust-line">Secure checkout via Etsy • Ships fast from PA</div>
 
     <div class="mini-links" aria-label="Secondary links">
@@ -239,6 +278,20 @@
       <a href="mailto:info@atlasdefense.co" aria-label="Email Atlas Defense Co">✉️ Dealer Inquiry</a>
     </div>
   </header>
+
+  <!-- DEALER MODAL -->
+  <div id="dealersModal" class="dealer-modal" aria-hidden="true">
+    <div class="dealer-modal-content" role="dialog" aria-modal="true" aria-labelledby="dealersTitle">
+      <div class="dealer-modal-header">
+        <h2 id="dealersTitle">Authorized Dealers</h2>
+        <button class="dealer-modal-close" id="dealersClose" aria-label="Close dealer list">×</button>
+      </div>
+      <ul id="dealersList" class="dealer-list"></ul>
+      <div style="text-align:right; margin-top:14px;">
+        <button class="cta" id="dealersDone" type="button">Close</button>
+      </div>
+    </div>
+  </div>
 
   <!-- PRODUCTS -->
   <section class="container section" id="products" aria-labelledby="prodTitle">
@@ -428,7 +481,7 @@
       el.addEventListener('keydown', (e) => { if(e.key === 'Enter' || e.key === ' ') copyText(el); });
     }
     function copyText(el){
-      const txt = el.textContent.replace(/^\s+|\s+$/g,'');
+      const txt = el.textContent.replace(/^\\s+|\\s+$/g,'');
       navigator.clipboard.writeText(txt).then(()=>{
         el.classList.add('copied');
         const prev = el.innerHTML;
@@ -438,6 +491,43 @@
     }
     makeCopyable('cage');
     makeCopyable('uei');
+
+    // ---------- DEALERS ----------
+    const DEALERS = [
+      { name: "Example Tactical", url: "https://exampletactical.com" },
+      { name: "Bravo Supply Co.", url: "https://bravosupply.co" },
+      { name: "Redline Armory", url: "https://redlinearmory.com" }
+    ];
+
+    const dealersBtn = document.getElementById("dealersBtn");
+    const dealersModal = document.getElementById("dealersModal");
+    const dealersList = document.getElementById("dealersList");
+    const dealersClose = document.getElementById("dealersClose");
+    const dealersDone = document.getElementById("dealersDone");
+    let lastFocused = null;
+
+    // Build list
+    dealersList.innerHTML = DEALERS.map(d =>
+      `<li><a href="${d.url}" target="_blank" rel="noopener noreferrer">${d.name}</a></li>`
+    ).join("");
+
+    function openDealers() {
+      lastFocused = document.activeElement;
+      dealersModal.setAttribute("aria-hidden", "false");
+      dealersClose.focus();
+    }
+    function closeDealers() {
+      dealersModal.setAttribute("aria-hidden", "true");
+      if (lastFocused) lastFocused.focus();
+    }
+
+    dealersBtn.addEventListener("click", openDealers);
+    dealersClose.addEventListener("click", closeDealers);
+    dealersDone.addEventListener("click", closeDealers);
+    window.addEventListener("keydown", e => {
+      if(e.key === "Escape" && dealersModal.getAttribute("aria-hidden") === "false") closeDealers();
+    });
+    dealersModal.addEventListener("click", e => { if(e.target.id === "dealersModal") closeDealers(); });
   </script>
 </body>
 </html>
